@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml"
+    fx:controller="com.loantracker.controllers.GenerateReportController">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20" />
+    </padding>
+
+    <Label text="Generate Report" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+
+    <VBox spacing="5">
+        <Label text="Report Type" />
+        <ComboBox fx:id="reportTypeComboBox" maxWidth="Infinity" />
+    </VBox>
+
+    <VBox spacing="5">
+        <Label text="Date Range" />
+        <HBox spacing="10">
+            <DatePicker fx:id="startDatePicker" promptText="Start Date" />
+            <Label text="to" />
+            <DatePicker fx:id="endDatePicker" promptText="End Date" />
+        </HBox>
+    </VBox>
+
+    <Label fx:id="messageLabel" wrapText="true" />
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Cancel" onAction="#handleCancel" />
+        <Button text="Generate" onAction="#handleGenerate" defaultButton="true" />
+    </HBox>
+
+</VBox> 

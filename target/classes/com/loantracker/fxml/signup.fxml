@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="CENTER" spacing="10" xmlns:fx="http://javafx.com/fxml"
+    fx:controller="com.loantracker.controllers.SignupController"
+    stylesheets="@../css/styles.css">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20" />
+    </padding>
+
+    <Label text="Create Account" styleClass="title-label" />
+
+    <TextField fx:id="usernameField" promptText="Username" styleClass="input-field" />
+    <TextField fx:id="emailField" promptText="Email" styleClass="input-field" />
+    <PasswordField fx:id="passwordField" promptText="Password" styleClass="input-field" />
+    <PasswordField fx:id="confirmPasswordField" promptText="Confirm Password"
+        styleClass="input-field" />
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Sign Up" onAction="#handleSignup" styleClass="primary-button" />
+        <Button text="Back to Login" onAction="#showLogin" styleClass="secondary-button" />
+    </HBox>
+
+    <Label fx:id="messageLabel" styleClass="message-label" />
+</VBox> 

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml"
+    fx:controller="com.loantracker.controllers.AddLoanController"
+    stylesheets="@../css/styles.css">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20" />
+    </padding>
+
+    <Label text="Add New Loan" styleClass="title-label" />
+
+    <GridPane vgap="10" hgap="10">
+        <Label text="Borrower Name:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+        <TextField fx:id="borrowerNameField" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+        <Label text="Amount:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+        <TextField fx:id="amountField" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+
+        <Label text="Interest Rate (%):" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+        <TextField fx:id="interestRateField" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+
+        <Label text="Start Date:" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+        <DatePicker fx:id="startDatePicker" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+
+        <Label text="End Date:" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+        <DatePicker fx:id="endDatePicker" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+
+        <Label text="Status:" GridPane.rowIndex="5" GridPane.columnIndex="0" />
+        <ComboBox fx:id="statusComboBox" GridPane.rowIndex="5" GridPane.columnIndex="1" />
+
+        <Label text="Notes:" GridPane.rowIndex="6" GridPane.columnIndex="0" />
+        <TextArea fx:id="notesArea" GridPane.rowIndex="6" GridPane.columnIndex="1" />
+    </GridPane>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Save" onAction="#handleSave" styleClass="primary-button" />
+        <Button text="Cancel" onAction="#handleCancel" styleClass="secondary-button" />
+    </HBox>
+
+    <Label fx:id="messageLabel" styleClass="message-label" />
+</VBox> 

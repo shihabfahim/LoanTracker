@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+    fx:controller="com.loantracker.controllers.MainController"
+    stylesheets="@../css/styles.css">
+
+    <MenuBar>
+        <Menu text="File">
+            <MenuItem text="Logout" onAction="#handleLogout" />
+        </Menu>
+        <Menu text="Reports">
+            <MenuItem text="Generate Report" onAction="#handleGenerateReport" />
+        </Menu>
+    </MenuBar>
+
+    <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 10;">
+        <Label fx:id="welcomeLabel" styleClass="title-label" />
+    </HBox>
+
+    <TabPane VBox.vgrow="ALWAYS">
+        <Tab text="Active Loans" closable="false">
+            <VBox spacing="10" style="-fx-padding: 10;">
+                <HBox spacing="10" alignment="CENTER_RIGHT">
+                    <Button text="Add New Loan" onAction="#showAddLoanDialog"
+                        styleClass="primary-button" />
+                </HBox>
+
+                <TableView fx:id="loansTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn text="ID" fx:id="idColumn" prefWidth="50" />
+                        <TableColumn text="Borrower" fx:id="borrowerColumn" prefWidth="150" />
+                        <TableColumn text="Amount" fx:id="amountColumn" prefWidth="100" />
+                        <TableColumn text="Interest Rate" fx:id="interestRateColumn" prefWidth="100" />
+                        <TableColumn text="Start Date" fx:id="startDateColumn" prefWidth="100" />
+                        <TableColumn text="End Date" fx:id="endDateColumn" prefWidth="100" />
+                        <TableColumn text="Status" fx:id="statusColumn" prefWidth="100" />
+                    </columns>
+                </TableView>
+            </VBox>
+        </Tab>
+
+        <Tab text="Payments" closable="false">
+            <VBox spacing="10" style="-fx-padding: 10;">
+                <HBox spacing="10" alignment="CENTER_RIGHT">
+                    <Button text="Record Payment" onAction="#showAddPaymentDialog"
+                        styleClass="primary-button" />
+                </HBox>
+
+                <TableView fx:id="paymentsTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn text="ID" fx:id="paymentIdColumn" prefWidth="50" />
+                        <TableColumn text="Loan ID" fx:id="loanIdColumn" prefWidth="100" />
+                        <TableColumn text="Amount" fx:id="paymentAmountColumn" prefWidth="100" />
+                        <TableColumn text="Date" fx:id="paymentDateColumn" prefWidth="100" />
+                        <TableColumn text="Type" fx:id="paymentTypeColumn" prefWidth="100" />
+                        <TableColumn text="Notes" fx:id="notesColumn" prefWidth="200" />
+                    </columns>
+                </TableView>
+            </VBox>
+        </Tab>
+    </TabPane>
+</VBox> 
