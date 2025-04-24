@@ -20,7 +20,7 @@ A JavaFX-based desktop application for managing personal or small-scale loans wi
 
 1. Clone the repository:
 ```bash
-git clone [repository-url]
+git clone git@github.com:shihabfahim/LoanTracker.git
 cd loan-tracker
 ```
 
